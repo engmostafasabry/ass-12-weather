@@ -192,3 +192,22 @@ function getOtherWeather(weatherData, numberOfOtherDays = 2) {
   }
   return otherWeatherString;
 }
+
+if ("geolocation" in navigator) {
+  console.log("geolocation is available");
+  navigator.geolocation.getCurrentPosition(success, showError, {
+    maximumAge: 300000,
+    timeout: 10000,
+    enableHighAccuracy: true,
+  });
+
+  function success(position) {
+    console.log(position.coords.latitude, position.coords.longitude);
+  }
+
+  function showError(error) {
+    console.error(error);
+  }
+} else {
+  console.log("geoloacation not available");
+}
