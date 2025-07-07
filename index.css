@@ -2,6 +2,7 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #1e202b;
   color: white;
+  font-size: 14px;
 }
 
 .site-logo img {
@@ -66,4 +67,64 @@ main {
   transform: translateY(-50%);
   right: 5px;
   font-size: 14px;
+}
+
+.day-color-1 {
+  background-color: #323544;
+}
+
+.day-color-2 {
+  background-color: #262936;
+}
+
+.day {
+  color: #bfc1c8;
+}
+
+.day-header {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.day-body {
+  padding: 30px 20px;
+}
+
+.day-body .location {
+  font-size: 18px;
+}
+
+.day-body .temp {
+  font-size: 90px;
+  font-weight: bold;
+}
+
+.day-body img {
+  width: 90px;
+  height: 90px;
+}
+
+.state {
+  color: #009ad8;
+  margin-block: 20px;
+}
+
+.day-stats img {
+  width: 21px;
+  height: 21px;
+}
+
+.day-body-other {
+  padding: 50px 20px 10px 20px;
+}
+
+.day-body-other img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+}
+
+.day-body-other .temp-high {
+  font-size: 24px;
+  font-weight: bold;
 }
