@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -18,7 +25,91 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <h1>Hello world</h1>
+    <nav class="navbar navbar-expand-lg py-5">
+      <div class="container">
+        <a class="navbar-brand d-flex gap-2 site-logo" href="#">
+          <img src="./resources/images/logo@2x.png" alt="" />
+          <div>
+            <h1 class="text-white mb-1">Weather</h1>
+            <p class="text-white m-0">tagline goes here</p>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav gap-2 ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link active nav-button py-1 px-4"
+                aria-current="page"
+                href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-button py-1 px-4" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-button py-1 px-4" href="#">Live Cameras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-button py-1 px-4" href="#">Photos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-button py-1 px-4" href="#">Contacts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="search-container">
+              <div class="position-relative">
+                <input
+                  type="text"
+                  id="search-input"
+                  class="border-0 text-white w-100"
+                  placeholder="Find your location..."
+                />
+                <button
+                  class="search-btn text-white border-0 position-absolute"
+                  id="search-btn"
+                >
+                  Find
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container">
+        <div class="row"></div>
+      </section>
+      <section>
+        <h1>hi world</h1>
+        <h1>hi world</h1>
+        <h1>hi world</h1>
+        <h1>hi world</h1>
+        <h1>hi world</h1>
+        <h1>hi world</h1>
+        <h1>hi world</h1>
+        <h1>hi world</h1>
+        <h1>hi world</h1>
+        <h1>hi world</h1>
+      </section>
+    </main>
     <!-- bootstrap -->
     <script src="./resources/bootstrap-5.3.5/js/bootstrap.bundle.js"></script>
     <!-- custom script -->
