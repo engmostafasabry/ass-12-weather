@@ -219,7 +219,7 @@ function getUserLocation() {
   } else {
     console.error("geoloacation not available");
   }
-  return position;
+  return userLocation;
 }
 
 console.log("hello world");
