@@ -28,7 +28,20 @@ searchBtn.addEventListener("click", () => {
 //   }
 // })();
 
-displayWeather("cairo");
+(async function () {
+  initalizeWebsite();
+})();
+
+async function initalizeWebsite() {
+  try {
+    const locationPromise = await fetch(locationAPI);
+    const locationResponse = await locationPromise.json();
+    console.log(locationResponse);
+    displayWeather(locationResponse.loc);
+  } catch (error) {
+    displayWeather("cairo");
+  }
+}
 
 async function displayWeather(text) {
   try {
