@@ -8,6 +8,8 @@ const base = `https://api.weatherapi.com/v1/`;
 const searchURI = `${base}/search.json?key=${API}&q=`;
 const forcastURI = `${base}/forecast.json?key=${API}&q=`;
 
+const locationAPI = `https://ipinfo.io/?token=7a2901dc97cb3b`;
+
 searchInput.addEventListener("input", () => {
   displayWeather(searchInput.value);
 });
@@ -16,13 +18,15 @@ searchBtn.addEventListener("click", () => {
   displayWeather(searchInput.value);
 });
 
-// default initialization
-const userLocation = getUserLocation();
-if (userLocation !== null && userLocation !== undefined) {
-  displayWeather(`${userLocation.latitude},${userLocation.longitude}`);
-} else {
-  displayWeather("Cairo");
-}
+// // default initialization
+// (async function () {
+//   const userLocation = await getUserLocation();
+//   if (userLocation !== null && userLocation !== undefined) {
+//     displayWeather(`${userLocation.latitude},${userLocation.longitude}`);
+//   } else {
+//     displayWeather("Cairo");
+//   }
+// })();
 
 async function displayWeather(text) {
   try {
@@ -198,28 +202,28 @@ function getOtherWeather(weatherData, numberOfOtherDays = 2) {
   return otherWeatherString;
 }
 
-function getUserLocation() {
-  let userLocation = null;
-  if ("geolocation" in navigator) {
-    console.log("geolocation is available");
-    navigator.geolocation.getCurrentPosition(success, showError, {
-      maximumAge: 300000,
-      timeout: 10000,
-      enableHighAccuracy: true,
-    });
-
-    function success(position) {
-      console.log("got the location successfully");
-      userLocation = position.coords;
-    }
-
-    function showError(error) {
-      console.error(error);
-    }
-  } else {
-    console.error("geoloacation not available");
-  }
-  return userLocation;
-}
-
-console.log("hello world");
+// async function getUserLocation() {
+//   let userLocation = null;
+//   if ("geolocation" in navigator) {
+//     console.log("geolocation is available");
+//     navigator.geolocation.getCurrentPosition(success, showError, {
+//       maximumAge: 300000,
+//       timeout: 10000,
+//       enableHighAccuracy: true,
+//     });
+//
+//     function success(position) {
+//       console.log("got the location successfully");
+//       userLocation = position.coords;
+//     }
+//
+//     function showError(error) {
+//       console.error(error);
+//     }
+//   } else {
+//     console.error("geoloacation not available");
+//   }
+//   return userLocation;
+// }
+//
+// console.log("hello world");
