@@ -211,3 +211,5 @@ if ("geolocation" in navigator) {
 } else {
   console.log("geoloacation not available");
 }
+
+console.log("hello world");
