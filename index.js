@@ -17,7 +17,12 @@ searchBtn.addEventListener("click", () => {
 });
 
 // default initialization
-displayWeather("Cairo");
+const userLocation = getUserLocation();
+if (userLocation !== null && userLocation !== undefined) {
+  displayWeather(`${userLocation.latitude},${userLocation.longitude}`);
+} else {
+  displayWeather("Cairo");
+}
 
 async function displayWeather(text) {
   try {
@@ -193,23 +198,28 @@ function getOtherWeather(weatherData, numberOfOtherDays = 2) {
   return otherWeatherString;
 }
 
-if ("geolocation" in navigator) {
-  console.log("geolocation is available");
-  navigator.geolocation.getCurrentPosition(success, showError, {
-    maximumAge: 300000,
-    timeout: 10000,
-    enableHighAccuracy: true,
-  });
+function getUserLocation() {
+  let userLocation = null;
+  if ("geolocation" in navigator) {
+    console.log("geolocation is available");
+    navigator.geolocation.getCurrentPosition(success, showError, {
+      maximumAge: 300000,
+      timeout: 10000,
+      enableHighAccuracy: true,
+    });
 
-  function success(position) {
-    console.log(position.coords.latitude, position.coords.longitude);
-  }
+    function success(position) {
+      console.log("got the location successfully");
+      userLocation = position.coords;
+    }
 
-  function showError(error) {
-    console.error(error);
+    function showError(error) {
+      console.error(error);
+    }
+  } else {
+    console.error("geoloacation not available");
   }
-} else {
-  console.log("geoloacation not available");
+  return position;
 }
 
 console.log("hello world");
