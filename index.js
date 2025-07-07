@@ -24,9 +24,11 @@ searchBtn.addEventListener("click", () => {
 //   if (userLocation !== null && userLocation !== undefined) {
 //     displayWeather(`${userLocation.latitude},${userLocation.longitude}`);
 //   } else {
-//     displayWeather("Cairo");
+//     displayweather("cairo");
 //   }
 // })();
+
+displayWeather("cairo");
 
 async function displayWeather(text) {
   try {
