@@ -149,7 +149,7 @@ function getTodayWeather(weatherData) {
           </div>
           <div>
             <img src="./resources/images/icon-wind.png" class="me-1" alt="" />
-            <span>${weatherData[0].wind_speed}</span>
+            <span>${weatherData[0].wind_speed} Km/h</span>
           </div>
           <div>
             <img
@@ -184,7 +184,7 @@ function getOtherWeather(weatherData, numberOfOtherDays = 2) {
           <img src="${weatherData[i].state_icon}" alt="" />
           <div class="temp-high text-white">${weatherData[i].maxtemp}°C</div>
           <div class="temp-low">${weatherData[i].mintemp}°C</div>
-          <div class="state">${weatherData.state}</div>
+          <div class="state">${weatherData[i].state}</div>
         </div>
       </div>
     </div>
